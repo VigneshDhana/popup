@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .content{
+            width: 500px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(121, 121, 121);
+            color: aliceblue;
+            border-radius: 5px;
+        }
+        #popup{
+            position: absolute;
+            top: 20px;
+            z-index: 10;
+            display: none;
+            width: 150px;
+            height: 150px;
+            background-color: rgb(136, 77, 77);
+            color: aliceblue;
+            border-radius: 10px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Click Popup button</h1>
+        <button onclick="openPopup()" >Popup</button>
+    </div>
+    <div id="popup">
+        <h2>This is the popup</h2>
+    </div>
+    <script>
+        let count=1;
+        function openPopup() {
+            var popup = document.getElementById("popup");
+            if (count%2 !== 0){
+                popup.style.display = "block";
+            }
+            else{
+                popup.style.display = "none";
+            }
+            count++;
+        }
+    </script>
+</body>
+</html>
